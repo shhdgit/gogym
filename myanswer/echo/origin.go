@@ -1,3 +1,4 @@
+// Mock date command
 package main
 
 import (

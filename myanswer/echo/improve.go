@@ -1,3 +1,4 @@
+// Mock date command
 package main
 
 import (
@@ -6,15 +7,12 @@ import (
 )
 
 func main() {
-  argLen := len(os.Args)
+  args := os.Args[1:]
+  argLen := len(args)
 
-  for i, arg := range os.Args {
-    if i == 0 {
-      continue
-    }
-
+  for i, arg := range args {
     fmt.Print(arg)
-    if i < argLen - 1 {
+    if i < argLen {
       fmt.Print(" ")
     }
   }

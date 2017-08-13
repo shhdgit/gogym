@@ -1,10 +1,9 @@
-// Mock cat command
 package main
 
 import (
-  "fmt"
   "os"
   "io"
+  "fmt"
 )
 
 func main() {
@@ -15,8 +14,14 @@ func main() {
       continue
     }
 
-    io.Copy(os.Stdout, f)
-    f.Close()
+    _, err = io.Copy(os.Stdout, f)
+    if err != nil {
+      fmt.Fprintln(os.Stderr, err)
+    }
+
+    err = f.Close()
+    if err != nil {
+      fmt.Fprintln(os.Stderr, err)
+    }
   }
 }
-
