@@ -1,4 +1,4 @@
-Implement a command to calculate the checksum of data read from stdout.
+Implement a command to calculate the checksum of data read from stdin.
 
 Some of the popular checksum algorithms are: md5, sha256, sha512.
 
